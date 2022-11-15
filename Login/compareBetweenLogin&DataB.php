@@ -1,5 +1,7 @@
 <?php
 include "../connection.php";
+//declaration of session
+session_start();
 
 if (isset($_POST['logInBtn'])) {
     // https://www.geeksforgeeks.org/php-strtolower-function/#:~:text=The%20strtolower()%20function%20is,in%20the%20string%20remains%20unchanged.
@@ -42,20 +44,27 @@ if (isset($_POST['logInBtn'])) {
     // } else {
     //     echo "Empty";
     // }
+    $requete = "SELECT COUNT(*) FROM `signin`";
+    $query = mysqli_query($connection, $requete);
+    $data = mysqli_fetch_assoc($query);
 
-    if (!empty($email) && !empty($passw)) {
+
+    if (!empty($email) && !empty($passw) && $data['COUNT(*)'] != 0) {
         $requete = "SELECT * FROM signin";
         $query = mysqli_query($connection, $requete);
         while ($row = mysqli_fetch_assoc($query)) {
 
             if ($row['email'] == $email) {
                 if ($row['pass'] == $passw) {
+
                     header("Location:../Home/Add.php");
                 } else {
+                    $_SESSION['message'] = "Password incorrect";
                     header("Location:../Login/index.php");
                 }
             } else {
-                header("Location:../Login/index.php");
+                $_SESSION['message'] = "Email incorrect";
+                header("Location:..Login/index.php");
             }
         }
     } else {

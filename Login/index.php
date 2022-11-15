@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,14 @@
 <body class="mainBody">
     <!-- ===================Login Panel=================== -->
     <div class="text-center login ">
+        <?php
+        if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+
+        unset($_SESSION['message']);
+
+        ?>
         <form method="post" action="../Login/compareBetweenLogin&DataB.php">
             <div>
                 <p class="fs-1 fw-bold">
