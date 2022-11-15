@@ -23,6 +23,7 @@
             <div>
                 <p>
                     <input class="rounded fw-bold text-dark email" type="text" name="email" placeholder="Enter Your Email . . .">
+
                 </p>
             </div>
 

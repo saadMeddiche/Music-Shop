@@ -13,13 +13,13 @@
     text-align: center;
 }
 
-.name,.email,.password,.session,.Button{
+.name,.email,.password,.Button{
     border: none;
     height: 40px;
     width: 70%;
 }
 
-.name,.email,.password,.session{
+.name,.email,.password{
     /* space */
     padding: 0 25px;
     background-color:#D9D9D9 ;

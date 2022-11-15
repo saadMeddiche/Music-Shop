@@ -3,7 +3,7 @@ include "../connection.php";
 
 if (isset($_POST['signButton'])) {
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $pass = $_POST['pass'];
 
     if (!empty($name) && !empty($email) && !empty($pass)) {

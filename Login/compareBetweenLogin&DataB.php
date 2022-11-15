@@ -2,7 +2,8 @@
 include "../connection.php";
 
 if (isset($_POST['logInBtn'])) {
-    $email = $_POST['email'];
+    // https://www.geeksforgeeks.org/php-strtolower-function/#:~:text=The%20strtolower()%20function%20is,in%20the%20string%20remains%20unchanged.
+    $email = strtolower($_POST['email']);
     $passw = $_POST['passw'];
 
     // if (!empty($email) && !empty($passw)) {
