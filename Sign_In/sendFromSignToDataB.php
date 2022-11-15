@@ -1,22 +1,27 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$pass = $_POST['pass'];
-
-
 include "../connection.php";
 
-$requete = "INSERT INTO `signin`(`name`, `email`,`pass`)
-VALUES ('$name','$email','$pass')";
+if (isset($_POST['signButton'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
 
-$query = mysqli_query($connection, $requete);
+    if (!empty($name) && !empty($email) && !empty($pass)) {
+        $requete = "INSERT INTO `signin`(`name`, `email`,`pass`)
+        VALUES ('$name','$email','$pass')";
 
-if (isset($query)) {
+        $query = mysqli_query($connection, $requete);
 
-    //return to Sign.php
-    //Solution for resend the the data
+        if (isset($query)) {
 
-    header("location:../Login/index.php");
-} else {
-    echo 'erreur';
+            //return to Sign.php
+            //Solution for resend the the data
+
+            header("location:../Login/index.php");
+        } else {
+            echo 'erreur';
+        }
+    } else {
+        header("Location:../Sign_In/Sign.php");
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 include "../connection.php";
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['logInBtn'])) {
     $email = $_POST['email'];
     $passw = $_POST['passw'];
 
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
             if ($row['email'] == $email) {
                 if ($row['pass'] == $passw) {
-                    header("Location:../Home/home.php");
+                    header("Location:../Home/Add.php");
                 } else {
                     header("Location:../Login/index.php");
                 }

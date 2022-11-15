@@ -34,7 +34,7 @@
 
             <div>
                 <p>
-                    <button name="submit" type="submit" class="rounded button">
+                    <button name="logInBtn" type="submit" class="rounded button">
                         Log In
                     </button>
                 </p>
