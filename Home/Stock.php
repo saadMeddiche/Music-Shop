@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$row["type"].'</h5>
                         <p class="card-text"><b>Price : </b>'.$row["price"].'<br><b>Stock : </b>'.$row["stock"].'</p>
-                        <button href="#" class="btn btn-primary">Edit</button>
+                        <a href="../EditAndDelete/Edit.php?id='.$row["id"].'"><button href="#" class="btn btn-primary">Edit</button></a>
                     </div>
                 </div>
             </div>';
