@@ -56,7 +56,7 @@ if (isset($_POST['logInBtn'])) {
 
             if ($row['email'] == $email) {
                 if ($row['pass'] == $passw) {
-
+                    $_SESSION['userName'] = $row['name'];
                     header("Location:../Home/Add.php");
                 } else {
                     $_SESSION['message'] = "Password incorrect";
@@ -68,6 +68,7 @@ if (isset($_POST['logInBtn'])) {
             }
         }
     } else {
+        $_SESSION['message'] = "Fill the blanks";
         header("Location:../Login/index.php");
     }
 }

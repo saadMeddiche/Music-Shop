@@ -33,7 +33,7 @@
         <div>
             <p>
                 <!-- https://parsleyjs.org/doc/examples/simple.html -->
-                <input id="samepass" class="rounded fw-bold text-dark password" type="password" name="pass" placeholder="Enter Your Password" data-parsley-minlength="8" data-parsley-minlength-message="Pleaze set a password more then 8" required>
+                <input id="samepass" class="rounded fw-bold text-dark password" type="password" name="pass" placeholder="Enter Your Password" data-parsley-minlength="8" data-parsley-minlength-message="Please set a password more then 8" required>
             </p>
         </div>
         <div>
