@@ -15,6 +15,15 @@
 </head>
 
 <body class="body">
+    <?php
+    session_start();
+    if (isset($_SESSION['existBefore']) || !empty($_SESSION['existBefore'])) {
+        echo $_SESSION['existBefore'];
+    }
+
+    unset($_SESSION['existBefore']);
+
+    ?>
     <form method="post" action="sendFromSignToDataB.php" data-parsley-validate>
         <div class="singnIn">
             <p class="fs-1 fw-bold">Sign In</p>

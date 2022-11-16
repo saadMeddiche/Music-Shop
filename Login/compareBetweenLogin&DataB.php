@@ -44,6 +44,8 @@ if (isset($_POST['logInBtn'])) {
     // } else {
     //     echo "Empty";
     // }
+
+    // Solution for a probleme that happen only one time when there is no user registred yet
     $requete = "SELECT COUNT(*) FROM `signin`";
     $query = mysqli_query($connection, $requete);
     $data = mysqli_fetch_assoc($query);
@@ -56,8 +58,10 @@ if (isset($_POST['logInBtn'])) {
 
             if ($row['email'] == $email) {
                 if ($row['pass'] == $passw) {
-                    $_SESSION['userName'] = $row['name'];
-                    header("Location:../Home/Add.php");
+                    $_SESSION["name"] = $row['name'];
+                    $_SESSION["email"] = $row['email'];
+                    $_SESSION["pass"] = $row['pass'];
+                    header("Location:../Home/Stock.php");
                 } else {
                     $_SESSION['message'] = "Password incorrect";
                     header("Location:../Login/index.php");
@@ -68,7 +72,11 @@ if (isset($_POST['logInBtn'])) {
             }
         }
     } else {
-        $_SESSION['message'] = "Fill the blanks";
+        if (empty($email)) $_SESSION['message'] = "The Blank Of email was empty";
+        if (empty($passw)) $_SESSION['message'] = "The Blank Of password was empty";
+        if (empty($email) && empty($email)) $_SESSION['message'] = "The Blank Of email and password are empty";
+
+
         header("Location:../Login/index.php");
     }
 }

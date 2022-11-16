@@ -41,22 +41,25 @@ body{
 .options{
     border-bottom:4px solid #C6879A; 
 }
-.edit,.delete{
-    width: 100%;
-    border-radius: 5px;
-    border: 2px solid black;
-    padding: 5px 5px;
-}
+
 
 .edit{
     font-weight: bold;
-    color: white;
-    background-color: blue;
+    color: #F3ECEC   ;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #D9D9D9;
+    padding: 5px 5px;
+    background-color: #C6879A;
+}
+.edit:hover{
+    border: 2px solid black;
+    /* Bootstap change tha background color to blue */
+    background-color: #C6879A;
+    color: #F3ECEC   ;
 }
 
-.delete{
-background-color: red;
-}
+
 
 /* the form of all image should be the same */
 .image{

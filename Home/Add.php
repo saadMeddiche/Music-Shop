@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['userName'])) {
-    header("Location:../Login/index.php");
-}
+// session_start();
+// if (!isset($_SESSION['name'])) {
+//     header("Location:../Login/index.php");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['userName'])) {
         </div>
 
         <div>
-            <button class="rounded ButtonInHome"><?php echo $_SESSION['userName']; ?></button>
+            <button class="rounded ButtonInHome" hidden></button>
         </div>
     </div>
     <!-- =====================Add Modal===================== -->

@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['userName'])) {
-    header("Location:../Login/index.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +6,10 @@ if (!isset($_SESSION['userName'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../EditAndDelete/styleOfEdit.css">
+    <link rel="stylesheet" href="../Profile/styleOfProfile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
-    <title>Music | Edit</title>
+    <title>Music | Add</title>
 </head>
 
 <body>
@@ -24,7 +17,7 @@ if (!isset($_SESSION['userName'])) {
     <div class="d-flex justify-content-between p-3 header">
 
         <div class="">
-        <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>
+            <button class="rounded ButtonInHome" hidden>Add New Item</button>
         </div>
 
         <div>
@@ -34,47 +27,35 @@ if (!isset($_SESSION['userName'])) {
         </div>
 
         <div>
-            <button class="rounded ButtonInHome"><?php echo $_SESSION['userName']; ?></button>
+            <button class="rounded ButtonInHome" hidden></button>
         </div>
     </div>
     <!-- =====================Add Modal===================== -->
-    <?php 
-    include "../connection.php";
-    $id=$_GET['id'];
-    $requete="SELECT * FROM `items` WHERE id='$id'";
-    $query = mysqli_query($connection, $requete);
-    $row = mysqli_fetch_assoc($query);
-    if(mysqli_num_rows($query)==0){
-        header('location:../Home/Stock.php');
-    }
-    ?>
-    
     <div class="Add-Modal text-center">
 
 
-        <form action="../EditAndDelete/sendFromEditToDataB.php" method="post" enctype='multipart/form-data' data-parsley-validate>
-            <b class="titleOfAdd">Update The Musical instrument</b>
+        <form action="#" method="post" >
+            <b class="titleOfAdd">Bonjour <?php session_start();
+                                            echo $_SESSION["name"]; ?></b>
             <div class="">
 
-                <b>Type</b>
-                <input class="rounded modalinpt" type="text" name="type" value="<?php echo $row['type']; ?>" required>
-                <input type="hidden" name="idOfCard" value="<?php echo $row['id']; ?>">
+                <b class="pe-4">Name</b>
+                <input class="rounded modalinpt" type="text" name="name" value="<?php echo $_SESSION["name"];  ?>" disabled >
             </div>
             <div>
-                <b>Price</b>
+                <b class="pe-4">Email</b>
 
-                <input class="rounded modalinpt" type="number" name="price" value="<?php echo $row['price']; ?>" required>
+                <input class="rounded modalinpt" type="email" name="email" value="<?php echo $_SESSION["email"];  ?>" disabled >
             </div>
             <div>
-                <b>Stock</b>
-                <input class="rounded modalinpt" type="number" name="stock" value="<?php echo $row['stock']; ?>" required>
+                <b>Password</b>
+                <input class="rounded modalinpt" type="password" name="password" value="<?php echo $_SESSION["pass"];  ?>" disabled >
             </div>
+            <!-- <div>
+                <input class="imgBTN" type="file" name="img_img">
+            </div> -->
             <div>
-                <input class="imgBTN" type="file" name="img_img" value="">
-            </div>
-            <div class="container">
-                <button class="rounded updateBtn" type="submit" name="updateBtn"><b>Update</b> </button>
-                <button class="rounded deleteBtn" type="submit" name="deleteBtn"><b>Delete</b> </button>
+                <button class="rounded AddBtn " type="submit" name="AddBtn"><b>Change the password</b> </button>
             </div>
         </form>
 

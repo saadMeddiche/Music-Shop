@@ -1,3 +1,12 @@
+<?php
+include "../connection.php";
+
+$requete = "SELECT * FROM `items`";
+$query = mysqli_query($connection, $requete);
+if (mysqli_num_rows($query) == 0) {
+    header('location:../Home/Add.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +18,7 @@
     <!-- <meta http-equiv="refresh" content="0.5"> -->
     <link rel="stylesheet" href="../Home/styleOfStock.css">
 
-    <title>Document</title>
+    <title>Music | Home</title>
 </head>
 
 <body>
@@ -27,10 +36,10 @@
         </div>
 
         <div>
-            <button class="rounded ButtonInHome"><?php
+        <a href="../Profile/Profile.php"><button class="rounded ButtonInHome"><?php
                                                     session_start();
-                                                    echo $_SESSION['userName'];
-                                                    ?></button>
+                                                    echo $_SESSION["name"];
+                                                    ?></button></a>
         </div>
     </div>
 
@@ -45,11 +54,11 @@
                 echo '<div class="col-lg-3 col-md-6">
 
                 <div class="card">
-                    <img src="../Upload/'.$row["img"].'" class="card-img-top image" alt="...">
+                    <img src="../Upload/' . $row["img"] . '" class="card-img-top image" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">'.$row["type"].'</h5>
-                        <p class="card-text"><b>Price : </b>'.$row["price"].'<br><b>Stock : </b>'.$row["stock"].'</p>
-                        <a href="../EditAndDelete/Edit.php?id='.$row["id"].'"><button href="#" class="btn btn-primary">Edit</button></a>
+                        <h5 class="card-title">' . $row["type"] . '</h5>
+                        <p class="card-text"><b>Price : </b>' . $row["price"] . '<br><b>Stock : </b>' . $row["stock"] . '</p>
+                        <a href="../EditAndDelete/Edit.php?id=' . $row["id"] . '"><button href="#" class="btn btn-primary edit ">Edit</button></a>
                     </div>
                 </div>
             </div>';

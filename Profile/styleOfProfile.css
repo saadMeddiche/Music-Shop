@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("../img/addBackground.png");
+    height: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.ButtonInHome{
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #F3ECEC;
+    border: 2px solid #C6879A;
+}
+
+.ButtonInHome:hover{
+    border: 2px solid black;
+}
+
+.header{
+    background-color: #C6879A;
+}
+
+.Add-Modal{
+padding-top: 20vh;
+}
+
+.modalinpt{
+    border: 2px solid #C6879A ;
+    height: 30px;
+    width: 40%;
+    margin-top: 20px;
+
+    padding: 0 25px;
+    background-color:#F3ECEC ;
+}
+
+.AddBtn{
+    color:#F3ECEC ;
+    border: 2px solid #C6879A;
+    background-color: #C6879A;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: 80px;
+    width: 40%;
+}
+
+.imgBTN{
+    margin-top: 20px; 
+    margin-right:175px;
+}
+
