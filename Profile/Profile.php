@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +42,7 @@
 
 
         <form action="#" method="post">
-            <b class="titleOfAdd">Bonjour <?php session_start();
+            <b class="titleOfAdd">Bonjour <?php 
                                             echo $_SESSION["name"]; ?></b>
             <div class="">
 
@@ -59,8 +63,9 @@
             </div> -->
             <div class="container d-flex">
                 <!-- Button trigger modal -->
+                <!-- https://stackoverflow.com/questions/8919682/remove-all-styling-formatting-from-hyperlinks -->
                 <button class="rounded AddBtn" type="button" name="AddBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Change the password</b> </button>
-                <a href=""></a><button class="rounded logOutBtn" type="button" name="logOutBtn"><b>Log Out</b> </button>
+                <a class="rounded logOutBtn"  type="button" href="../Profile/Log_Out.php" name="logOutBtn"> <b>Log Out</b> </a>
             </div>
         </form>
     </div>

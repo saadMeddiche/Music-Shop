@@ -20,7 +20,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- <meta http-equiv="refresh" content="0.5"> -->
-    <link rel="stylesheet" href="../Home/styleOfStock.css">
+    <link rel="stylesheet" href="../Users/styleOfUsers.css">
 
     <title>Music | Home</title>
 </head>
@@ -30,7 +30,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
     <div class="d-flex justify-content-between p-3 header">
 
         <div class="">
-            <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>
+            <a href="../Home/Add.php"><button class="rounded ButtonInHome" hidden>Add New Item</button></a>
         </div>
 
         <div>
@@ -53,18 +53,16 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
         <div class="row">
             <?php
             include "../connection.php";
-            $requete = "SELECT * FROM `items`";
+            $requete = "SELECT * FROM `signin`";
             $query = mysqli_query($connection, $requete);
             while ($row = mysqli_fetch_assoc($query)) {
                 echo '<div class="col-lg-3 col-md-6">
 
                 <div class="card">
-                    <div style="height: 150px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(../Upload/' . $row["img"] . ');">
-                    </div>
                     <div class="card-body">
-                        <h5 class="card-title text-truncate" title="' . $row["type"] . '">' . $row["type"] . ' jhydsgjsd sdjfhgsdjfs jyhgdsjf</h5>
-                        <p class="card-text"><b>Price : </b>' . $row["price"] . '<br><b>Stock : </b>' . $row["stock"] . '</p>
-                        <a href="../EditAndDelete/Edit.php?id=' . $row["id"] . '"><button href="#" class="btn btn-primary edit ">Edit</button></a>
+                        <h5 class="card-title text-truncate" title="' . $row["name"] . '">' . $row["name"] . '</h5>
+                        <p class="card-text"><b>Email : </b>' . $row["email"] . '<br><b>Rank : </b>Admin</p>
+                        <button class="btn edit">Online</button>
                     </div>
                 </div>
             </div>';
