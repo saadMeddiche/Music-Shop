@@ -68,15 +68,14 @@ if (isset($_POST['logInBtn'])) {
                 }
             } else {
                 $_SESSION['message'] = "Email incorrect";
-                header("Location:..Login/index.php");
+                header("Location:../Login/index.php");
             }
         }
     } else {
         if (empty($email)) $_SESSION['message'] = "The Blank Of email was empty";
         if (empty($passw)) $_SESSION['message'] = "The Blank Of password was empty";
         if (empty($email) && empty($email)) $_SESSION['message'] = "The Blank Of email and password are empty";
-
-
+        if($data['COUNT(*)'] == 0) $_SESSION['message'] ="This Emai do not exist";
         header("Location:../Login/index.php");
     }
 }

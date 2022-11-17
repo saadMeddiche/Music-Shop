@@ -51,12 +51,53 @@ padding-top: 20vh;
     background-color: #C6879A;
     margin-top: 20px;
     height: 30px;
-    margin-left: 80px;
-    width: 40%;
+    margin-left: 340px;
+    width: 34%;
 }
+
+.logOutBtn{
+    color:#F3ECEC ;
+    border: 2px solid #C6879A;
+    background-color: #C6879A;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: 20px;
+    width: 10%;
+}
+
+
 
 .imgBTN{
     margin-top: 20px; 
     margin-right:175px;
 }
+
+
+.pass_show{position: relative} 
+
+
+.pass_show .ptxt { 
+
+    
+position: absolute; 
+
+top: 50%; 
+
+right: 10px; 
+
+z-index: 1; 
+
+font-weight: bold;
+color: #C6879A; 
+
+margin-top: -10px; 
+
+cursor: pointer; 
+
+transition: .3s ease all; 
+
+} 
+
+.pass_show .ptxt:hover{color: #333333;} 
+
 

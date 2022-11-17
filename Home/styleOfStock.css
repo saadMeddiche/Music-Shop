@@ -64,6 +64,7 @@ body{
 /* the form of all image should be the same */
 .image{
     min-height: 150px;
+    min-width: 100px;
 }
 
 /* .allCards{
