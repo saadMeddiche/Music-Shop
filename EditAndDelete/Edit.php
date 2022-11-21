@@ -32,7 +32,7 @@ if (!isset($_SESSION['name'])) {
 
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
-            <a href="../Home/Stock.php"><button class="ButtonInHome">Users</button></a>
+            <a href="../Users/Users.php"><button class="ButtonInHome">Users</button></a>
             <button class="ButtonInHome">Soon!</button>
         </div>
 
@@ -72,7 +72,7 @@ if (!isset($_SESSION['name'])) {
             </div>
             <div>
                 <b>Stock</b>
-                <input class="rounded modalinpt" type="number" name="stock" value="<?php echo $row['stock']; ?>" required>
+                <input class="rounded modalinpt" type="text" name="stock" value="<?php echo $row['stock']; ?>" disabled required>
             </div>
             <div>
                 <input class="imgBTN" type="file" name="img_img" value="">

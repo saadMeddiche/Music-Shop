@@ -45,7 +45,16 @@ if (isset($_POST["saveButtonOfModal"])) {
 
     session_start();
 
-    $priceOfBoughts = $_POST["priceOfBoughts"];
+    $requete = "SELECT * FROM `statistique`";
+    $query = mysqli_query($connection, $requete);
+    $row = mysqli_fetch_assoc($query);
+
+    $sumOfSells = $row["sumOfSells"];
+    $sumOfBoughts = $row["sumOfBoughts"];
+    $priceOfSells = $row["priceOfSells"];
+    $priceOfBoughts = $row["priceOfBoughts"];
+
+    $priceOfBought = $_POST["priceOfBoughts"];
     $boughts = $_POST["boughts"];
     $sells = $_POST["sells"];
     $discount = $_POST["discount"];
@@ -70,22 +79,33 @@ if (isset($_POST["saveButtonOfModal"])) {
     // echo "test";
 
     // Solution for string + string when the blanks are empty
-    if ($boughts = null) $boughts = 0;
+    if ($boughts == null) $boughts = 0;
 
-    if ($sells = null)  $sells = 0;
+    if ($sells == null)  $sells = 0;
 
-    if ($discount = null) $discount=0;
+    if ($discount == null) $discount = 0;
 
+
+    $priceOfSells += $price * $sells;
+    $priceOfBoughts += $priceOfBought * $boughts;
+    $sumOfSells += $sells;
+    $sumOfBoughts += $boughts;
 
     $stock = $stock + $boughts - $sells;
     $price = $price - ($price * ($discount / 100));
 
-
-
-
     $id = $_POST["idOfCard"];
     $requete = "UPDATE `items` SET `price`='$price',`stock`='$stock' WHERE id='$id'";
     $query = mysqli_query($connection, $requete);
+
+    $requete = "UPDATE `statistique` SET
+    `sumOfSells`='$sumOfSells',
+    `sumOfBoughts`='$sumOfBoughts',
+    `priceOfSells`='$priceOfSells',
+    `priceOfBoughts`='$priceOfBoughts'
+    WHERE id='99'";
+    $query = mysqli_query($connection, $requete);
+
 
 
     header("Location:../EditAndDelete/Edit.php?id=$id");
