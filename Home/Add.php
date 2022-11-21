@@ -21,24 +21,27 @@ if (!isset($_SESSION['name'])) {
 
 <body>
     <!-- =====================Header===================== -->
-    <div class="d-flex justify-content-between p-3 header">
+    <div class="p-3 header text-center">
 
-        <div class="">
-            <button class="rounded ButtonInHome" hidden>Add New Item</button>
+        <!-- <div class="">
+            <a href="../Home/Add.php"><button class="rounded ButtonInHome " HIDDEN>Add New Item</button></a>
+        </div> -->
+
+        <div>
+            <a href="../Home/Stock.php"><button class="ButtonInHome" title="Stock">Stock</button></a>
+            <a href="../Users/Users.php"><button class="ButtonInHome" title="Users">Users</button></a>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="Statistiques">Statis</button></a>
         </div>
 
         <div>
-            <a href="../Home/Stock.php"><button class="ButtonInHome" title="Stockage">Stock</button></a>
-            <a href="../Users/Users.php"><button class="ButtonInHome" title="Users" >Users</button></a>
-            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="statistics">Statis</button></a>
-        </div>
+            <a href="../Profile/Profile.php"><button class="rounded ButtonInHome"><?php
 
-        <div>
-            <button class="rounded ButtonInHome" hidden></button>
+                                                                                    echo $_SESSION["name"];
+                                                                                    ?></button></a>
         </div>
     </div>
     <!-- =====================Add Modal===================== -->
-    <div class="Add-Modal text-center">
+    <div class="Add-Modal text-center ">
 
 
         <form action="../Home/sendFromAddToDataB.php" method="post" enctype='multipart/form-data' data-parsley-validate>
@@ -51,18 +54,18 @@ if (!isset($_SESSION['name'])) {
             <div>
                 <b>Price</b>
 
-                <input class="rounded modalinpt" min="0"  oninput="validity.valid||(value='');" type="number" name="price" required>
+                <input class="rounded modalinpt" min="0" step="0.01" oninput="validity.valid||(value='');" type="number" name="price" required>
             </div>
-            <div>
+            <!-- <div>
                 <b>Stock</b>
                 <input class="rounded modalinpt" min="0"  oninput="validity.valid||(value='');"type="number" name="stock" required>
-            </div>
-            <div>
+            </div> -->
+            <div class="">
                 <input class="imgBTN" type="file" name="img_img">
-            </div>
-            <div>
                 <button class="rounded AddBtn" type="submit" name="AddBtn"><b>ADD</b> </button>
+
             </div>
+            
         </form>
 
 

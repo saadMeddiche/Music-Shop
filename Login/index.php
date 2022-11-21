@@ -31,14 +31,14 @@
 
             <div>
                 <p>
-                    <input class="rounded fw-bold text-dark email" type="text" name="email" placeholder="Enter Your Email . . .">
+                    <input class="rounded fw-bold text-dark  email" type="text" name="email" placeholder="Enter Your Email . . .">
 
                 </p>
             </div>
 
             <div>
                 <p>
-                    <input class="rounded fw-bold text-dark password" type="text" name="passw" placeholder="Enter Your Password . . .">
+                    <input class="rounded fw-bold text-dark  email password" type="text" name="passw" placeholder="Enter Your Password . . .">
                 </p>
             </div>
 

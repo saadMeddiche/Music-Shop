@@ -32,7 +32,7 @@ body{
 }
 
 .Add-Modal{
-padding-top: 20vh;
+margin-top: 30vh;
 }
 
 .modalinpt{
@@ -51,12 +51,54 @@ padding-top: 20vh;
     background-color: #C6879A;
     margin-top: 20px;
     height: 30px;
-    margin-left: 50px;
-    width: 40%;
+    width: 15%;
+
 }
 
 .imgBTN{
     margin-top: 20px; 
-    margin-right:175px;
+
+}
+
+@media(max-width:625px){
+    .Add-Modal{
+      background-color:  #D9D9D9;
+      border: 2px solid #C6879A ;
+      padding: 20px;
+
+    }
+
+    body{
+        background-image: none;
+        background-color: #F3ECEC;
+    }
+
+    .modalinpt {
+        width: 80%;
+    }
+
+    .AddBtn{
+        width: 20%;
+ 
+    }
+    .imgBTN{
+        width:50%;
+        font-size:16.5PX;
+    }
+}
+
+@media (min-width:450PX) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+@media (max-width:450px) {
+    .Add-Modal{
+        margin-top: 20vh;
+    }
+    
 }
 

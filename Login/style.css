@@ -3,11 +3,11 @@
 .mainBody{
     background-image: url("../img/bg.png");
     height: 50%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 /* Position of the login panel */
@@ -16,7 +16,6 @@
 }
 
 .email , .password , .button {
-
     border: none;
     height: 40px;
     width: 40%;
@@ -44,6 +43,32 @@
     background-color: #C6879A;
     border-color: #C6879A;
 }
+
+@media (max-width:625px){
+
+    .mainBody{
+        background-image: url("../img/mobileLogin.png");
+        height:50%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
+
+@media (max-width:768px){
+    .email , .password , .button{
+
+        
+        width: 70%;
+    }
+    
+}
+
+
+
+
 
 
 

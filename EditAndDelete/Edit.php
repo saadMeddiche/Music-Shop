@@ -68,11 +68,14 @@ if (!isset($_SESSION['name'])) {
             <div>
                 <b>Price</b>
 
-                <input class="rounded modalinpt" type="number" min="0"  oninput="validity.valid||(value='');" name="price" value="<?php echo $row['price']; ?>" required>
+                <input class="rounded modalinpt" type="number" min="0" step="0.01"  oninput="validity.valid||(value='');" name="price" value="<?php echo $row['price']; ?>" required>
             </div>
             <div>
                 <b>Stock</b>
-                <input class="rounded modalinpt" type="text" min="0" oninput="validity.valid||(value='');" name="stock" value="<?php echo $row['stock']; ?>"  required>
+                <input class="rounded modalinpt" type="number" min="0" oninput="validity.valid||(value='');" name="stock" value="<?php echo $row['stock']; ?>" disabled required>
+                <!-- Solution for disabled in line 75 -->
+                <input class="rounded modalinpt" type="number" min="0" oninput="validity.valid||(value='');" name="stockHidden" value="<?php echo $row['stock']; ?>" hidden>
+
             </div>
             <div>
                 <input class="imgBTN" type="file" name="img_img" value="">
@@ -107,7 +110,8 @@ if (!isset($_SESSION['name'])) {
                             </div>
                             <label>Sells</label>
                             <div class="form-group pass_show">
-                                <input type="number" name="sells" min="0" oninput="validity.valid||(value='');" class="form-control" name="NewPassword" placeholder="Sells">
+                                <!-- always the sells should be equal or low that it stock -->
+                                <input type="number" name="sells" min="0" max="<?php echo $row['stock']; ?>" oninput="validity.valid||(value='');" class="form-control" name="NewPassword" placeholder="Sells">
                             </div>
                             <label>Boughts</label>
                             <div class="form-group pass_show">

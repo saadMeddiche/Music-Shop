@@ -9,7 +9,7 @@
 
 .body{
     padding-top: 25vh;
-    margin-right: 700px;
+    margin-right: 60%;
     text-align: center;
 }
 
@@ -29,4 +29,12 @@
     font-weight: bold;
     color: #F3ECEC;
     background-color:#C6879A ;
+}
+
+@media (max-width:765px){
+    .body{
+        margin-right: 0%;
+ 
+    }
+
 }

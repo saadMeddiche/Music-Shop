@@ -75,3 +75,9 @@ body{
     flex-basis: auto;
 } */
 
+@media (min-width:562px){
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+}

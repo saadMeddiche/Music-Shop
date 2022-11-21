@@ -27,13 +27,13 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
 <body>
     <!-- =======================header======================= -->
-    <div class="d-flex justify-content-between p-3 header">
+    <div class="text-center p-3 header">
 
         <div class="">
             <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>
         </div>
 
-        <div>
+        <div >
             <a href="../Home/Stock.php"><button class="ButtonInHome" title="Stock">Stock</button></a>
             <a href="../Users/Users.php"><button class="ButtonInHome" title="Users">Users</button></a>
             <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="Statistiques">Statis</button></a>
@@ -56,7 +56,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
             $requete = "SELECT * FROM `items`";
             $query = mysqli_query($connection, $requete);
             while ($row = mysqli_fetch_assoc($query)) {
-                echo '<div class="col-lg-3 col-md-6">
+                echo '<div class="col-lg-3 col-md-6 col-sm-6 ">
 
                 <div class="card">
                     <div style="height: 150px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(../Upload/' . $row["img"] . ');">

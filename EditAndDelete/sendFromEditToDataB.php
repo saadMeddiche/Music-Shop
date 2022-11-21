@@ -4,7 +4,7 @@ include "../connection.php";
 if (isset($_POST["updateBtn"])) {
     $type = $_POST["type"];
     $price = $_POST["price"];
-    $stock = $_POST["stock"];
+    $stock = $_POST["stockHidden"];
     $nameOfImg = $_FILES['img_img']['name'];
     $tempNameOfImg = $_FILES['img_img']['tmp_name'];
     $folder = "../Upload/";
@@ -12,7 +12,7 @@ if (isset($_POST["updateBtn"])) {
 
     $id = $_POST["idOfCard"];
 
-    if (!empty($type) && !empty($price) && !empty($stock)) {
+    if (!empty($type) && !empty($price) ) {
         if ($nameOfImg === "") {
             $requete = "UPDATE `items` SET `type`='$type',`price`='$price',`stock`='$stock' WHERE id='$id'";
         } else {
@@ -60,7 +60,7 @@ if (isset($_POST["saveButtonOfModal"])) {
     $discount = $_POST["discount"];
 
     $price = $_POST["price"];
-    $stock = $_POST["stock"];
+    $stock = $_POST["stockHidden"];
 
     // echo "$price<br>";
     // echo "$stock<br><br>";
@@ -85,16 +85,22 @@ if (isset($_POST["saveButtonOfModal"])) {
 
     if ($discount == null) $discount = 0;
 
+    if($priceOfBought == null) $priceOfBought = 0;
+
 
     $priceOfSells += $price * $sells;
+    echo " 1 $priceOfBought";
+    echo " 2 $boughts";
     $priceOfBoughts += $priceOfBought * $boughts;
+    
+
     $sumOfSells += $sells;
     $sumOfBoughts += $boughts;
 
     $stock = $stock + $boughts - $sells;
     $price = $price - ($price * ($discount / 100));
 
-    if($stock<0) $stock=0;
+    if ($stock < 0) $stock = 0;
 
     $id = $_POST["idOfCard"];
     $requete = "UPDATE `items` SET `price`='$price',`stock`='$stock' WHERE id='$id'";

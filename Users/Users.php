@@ -21,11 +21,9 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
 <body>
     <!-- =======================header======================= -->
-    <div class="d-flex justify-content-between p-3 header">
+    <div class="text-center p-3 header sticky-top">
 
-        <div class="">
-            <a href="../Home/Add.php"><button class="rounded ButtonInHome" hidden>Add New Item</button></a>
-        </div>
+        
 
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
@@ -50,12 +48,14 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
             $requete = "SELECT * FROM `signin`";
             $query = mysqli_query($connection, $requete);
             while ($row = mysqli_fetch_assoc($query)) {
-                echo '<div class="col-lg-3 col-md-6">
+                echo '
+                <div class="col-lg-3 col-md-6 col-sm-6">
 
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-truncate " title="' . $row["name"] . '">' . $row["name"] . '</h5>
                         <p class="card-text text-truncate" title="'.$row["email"].'"><b>Email : </b>' . $row["email"] . '<br><b>Rank : </b>Admin</p>
+
                     </div>
                 </div>
             </div>';

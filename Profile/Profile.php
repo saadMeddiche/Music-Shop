@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
+if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,28 +21,31 @@ if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
 <body>
     <!-- =====================Header===================== -->
-    <div class="d-flex justify-content-between p-3 header">
+    <div class="text-center p-3 header">
 
         <div class="">
-            <button class="rounded ButtonInHome" hidden>Add New Item</button>
+            <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>
         </div>
 
         <div>
-            <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
-            <button class="ButtonInHome">Soon!</button>
-            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome">Soon!</button></a>
+            <a href="../Home/Stock.php"><button class="ButtonInHome" title="Stock">Stock</button></a>
+            <a href="../Users/Users.php"><button class="ButtonInHome" title="Users">Users</button></a>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="Statistiques">Statis</button></a>
         </div>
 
         <div>
-            <button class="rounded ButtonInHome" hidden></button>
+            <a href="../Profile/Profile.php"><button class="rounded ButtonInHome"><?php
+
+                                                                                    echo $_SESSION["name"];
+                                                                                    ?></button></a>
         </div>
     </div>
     <!-- =====================Profile Modal===================== -->
-    <div class="Add-Modal text-center">
+    <div class="Add-Modal text-center container">
 
 
         <form action="#" method="post">
-            <b class="titleOfAdd">Bonjour <?php 
+            <b class="titleOfAdd">Bonjour <?php
                                             echo $_SESSION["name"]; ?></b>
             <div class="">
 
@@ -61,12 +64,14 @@ if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
             <!-- <div>
                 <input class="imgBTN" type="file" name="img_img">
             </div> -->
-            <div class="container d-flex">
+            <div class="hhhh  text-center gap-4">
                 <!-- Button trigger modal -->
                 <!-- https://stackoverflow.com/questions/8919682/remove-all-styling-formatting-from-hyperlinks -->
                 <button class="rounded AddBtn" type="button" name="AddBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Change the password</b> </button>
-                <a class="rounded logOutBtn"  type="button" href="../Profile/Log_Out.php" name="logOutBtn"> <b>Log Out</b> </a>
+                <a class="rounded logOutBtn" type="button" href="../Profile/Log_Out.php" name="logOutBtn"> <b>Log Out</b> </a>
+
             </div>
+
         </form>
     </div>
 
@@ -95,12 +100,12 @@ if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
                                 </div>
                                 <label>Confirm Password</label>
                                 <div class="form-group pass_show">
-                                    <input type="password" value="" class="form-control" placeholder="Confirm Password" data-parsley-minlength="8" data-parsley-minlength-message="Please set a password more then 8" data-parsley-equalto="#new" data-parsley-equalto-message="This is not the same password"required>
+                                    <input type="password" value="" class="form-control" placeholder="Confirm Password" data-parsley-minlength="8" data-parsley-minlength-message="Please set a password more then 8" data-parsley-equalto="#new" data-parsley-equalto-message="This is not the same password" required>
                                 </div>
 
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
                     <div class="modal-footer">
                         <!-- Soufiane -->

@@ -32,8 +32,7 @@ body{
 }
 
 .Add-Modal{
-padding-top: 20vh;
-}
+    margin-top: 10%;}
 
 .modalinpt{
     border: 2px solid #C6879A ;
@@ -51,8 +50,7 @@ padding-top: 20vh;
     background-color: #C6879A;
     margin-top: 20px;
     height: 30px;
-    margin-left: 340px;
-    width: 34%;
+    width: 30%;
 }
 
 .logOutBtn{
@@ -61,7 +59,6 @@ padding-top: 20vh;
     background-color: #C6879A;
     margin-top: 20px;
     height: 30px;
-    margin-left: 20px;
     width: 10%;
 }
 
@@ -99,5 +96,41 @@ transition: .3s ease all;
 } 
 
 .pass_show .ptxt:hover{color: #333333;} 
+
+@media (max-width:2000px){
+    body{
+        background-image: url("../img/bg.png");
+        background-color: #F3ECEC;
+
+    }
+
+    .Add-Modal{
+        background-color:  #D9D9D9;
+        border: 2px solid #C6879A ;
+        padding: 20px;
+  
+    }
+
+    .modalinpt{
+        width:70%;
+    }
+
+    .AddBtn ,.logOutBtn{
+        width:100%;
+    }
+
+}
+
+@media (min-width:450PX) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hhhh{
+        display: flex;
+        justify-content: center;
+    }
+
+}
 
 
