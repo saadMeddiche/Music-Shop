@@ -30,7 +30,7 @@ if(!isset($_SESSION["name"])) header("Location:../Login/index.php");
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
             <button class="ButtonInHome">Soon!</button>
-            <button class="ButtonInHome">Soon!</button>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome">Soon!</button></a>
         </div>
 
         <div>

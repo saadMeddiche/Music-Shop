@@ -1,12 +1,6 @@
 <?php
 include "../connection.php";
 
-$requete = "SELECT * FROM `items`";
-$query = mysqli_query($connection, $requete);
-if (mysqli_num_rows($query) == 0) {
-    header('location:../Home/Add.php');
-}
-
 session_start();
 if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
@@ -36,7 +30,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
             <a href="../Users/Users.php"><button class="ButtonInHome">Users</button></a>
-            <button class="ButtonInHome">Soon!</button>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="statistiques">statis</button></a>
         </div>
 
         <div>
@@ -60,9 +54,8 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-truncate" title="' . $row["name"] . '">' . $row["name"] . '</h5>
-                        <p class="card-text"><b>Email : </b>' . $row["email"] . '<br><b>Rank : </b>Admin</p>
-                        <button class="btn edit">Online</button>
+                        <h5 class="card-title text-truncate " title="' . $row["name"] . '">' . $row["name"] . '</h5>
+                        <p class="card-text text-truncate" title="'.$row["email"].'"><b>Email : </b>' . $row["email"] . '<br><b>Rank : </b>Admin</p>
                     </div>
                 </div>
             </div>';

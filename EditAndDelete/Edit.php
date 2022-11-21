@@ -33,7 +33,7 @@ if (!isset($_SESSION['name'])) {
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
             <a href="../Users/Users.php"><button class="ButtonInHome">Users</button></a>
-            <button class="ButtonInHome">Soon!</button>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="statistiques">Statis</button></a>
         </div>
 
         <div>
@@ -68,11 +68,11 @@ if (!isset($_SESSION['name'])) {
             <div>
                 <b>Price</b>
 
-                <input class="rounded modalinpt" type="number" name="price" value="<?php echo $row['price']; ?>" required>
+                <input class="rounded modalinpt" type="number" min="0"  oninput="validity.valid||(value='');" name="price" value="<?php echo $row['price']; ?>" required>
             </div>
             <div>
                 <b>Stock</b>
-                <input class="rounded modalinpt" type="text" name="stock" value="<?php echo $row['stock']; ?>" disabled required>
+                <input class="rounded modalinpt" type="text" min="0" oninput="validity.valid||(value='');" name="stock" value="<?php echo $row['stock']; ?>"  required>
             </div>
             <div>
                 <input class="imgBTN" type="file" name="img_img" value="">

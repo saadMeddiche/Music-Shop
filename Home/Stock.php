@@ -34,9 +34,9 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
         </div>
 
         <div>
-            <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
-            <a href="../Users/Users.php"><button class="ButtonInHome">Users</button></a>
-            <button class="ButtonInHome">Soon!</button>
+            <a href="../Home/Stock.php"><button class="ButtonInHome" title="Stock">Stock</button></a>
+            <a href="../Users/Users.php"><button class="ButtonInHome" title="Users">Users</button></a>
+            <a href="../Statistiques/Statistiques.php"><button class="ButtonInHome" title="Statistiques">Statis</button></a>
         </div>
 
         <div>
@@ -62,12 +62,12 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
                     <div style="height: 150px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(../Upload/' . $row["img"] . ');">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-truncate" title="' . $row["type"] . '">' . $row["type"] . ' jhydsgjsd sdjfhgsdjfs jyhgdsjf</h5>
+                        <h5 class="card-title text-truncate" title="' . $row["type"] . '">' . $row["type"] . ' </h5>
                         <p class="card-text"><b>Price : </b>' . $row["price"] . '<br><b>Stock : </b>' . $row["stock"] . '</p>
                         <a href="../EditAndDelete/Edit.php?id=' . $row["id"] . '"><button href="#" class="btn btn-primary edit ">Edit</button></a>
                     </div>
                 </div>
-            </div>';
+                </div>';
             }
 
             ?>

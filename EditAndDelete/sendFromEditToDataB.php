@@ -94,6 +94,8 @@ if (isset($_POST["saveButtonOfModal"])) {
     $stock = $stock + $boughts - $sells;
     $price = $price - ($price * ($discount / 100));
 
+    if($stock<0) $stock=0;
+
     $id = $_POST["idOfCard"];
     $requete = "UPDATE `items` SET `price`='$price',`stock`='$stock' WHERE id='$id'";
     $query = mysqli_query($connection, $requete);
