@@ -41,7 +41,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
         </div>
     </div>
     <!-- =====================Profile Modal===================== -->
-    <div class="Add-Modal text-center container">
+    <div class="Add-Modal  text-center">
 
 
         <form action="#" method="post">
@@ -64,11 +64,14 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
             <!-- <div>
                 <input class="imgBTN" type="file" name="img_img">
             </div> -->
-            <div class="hhhh  text-center gap-4">
+            <div class="Both gap-2  ">
                 <!-- Button trigger modal -->
                 <!-- https://stackoverflow.com/questions/8919682/remove-all-styling-formatting-from-hyperlinks -->
-                <button class="rounded AddBtn" type="button" name="AddBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Change the password</b> </button>
-                <a class="rounded logOutBtn" type="button" href="../Profile/Log_Out.php" name="logOutBtn"> <b>Log Out</b> </a>
+                    
+                    <button class="rounded AddBtn" type="button" name="AddBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Change the password</b> </button>
+                
+                    <a class="rounded logOutBtn" type="button" href="../Profile/Log_Out.php" name="logOutBtn"> <b>Log Out</b> </a>
+
 
             </div>
 

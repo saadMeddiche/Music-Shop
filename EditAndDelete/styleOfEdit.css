@@ -67,7 +67,6 @@ margin-left:10px;
 
 .imgBTN{
     margin-top: 20px; 
-    margin-right:175px;
 }
 
 .newSellsAndBoughts{
@@ -82,42 +81,7 @@ margin-left:10px;
 
 
 /* =============================== */
-*{
-    margin: 0;
-    padding: 0;
-}
 
-body{
-    background-image: url("../img/addBackground.png");
-    height: 50%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-}
-
-.ButtonInHome{
-    font-size: 13px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #F3ECEC;
-    border: 2px solid #C6879A;
-}
-
-.ButtonInHome:hover{
-    border: 2px solid black;
-}
-
-.header{
-    background-color: #C6879A;
-}
-
-.Add-Modal{
-padding-top: 20vh;
-}
 
 .modalinpt{
     border: 2px solid #C6879A ;
@@ -153,7 +117,7 @@ padding-top: 20vh;
 
 .imgBTN{
     margin-top: 20px; 
-    margin-right:175px;
+    justify-content: center;
 }
 
 
@@ -184,6 +148,69 @@ transition: .3s ease all;
 
 .pass_show .ptxt:hover{color: #333333;} 
 
+@media (min-width:450PX) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:480px){
+    .imgBTN{
+        margin-right: 0px;
+    }
+
+    body{
+        background-image: none;
+    }
+
+    .Add-Modal{
+        background-color: #D9D9D9 !important;
+        border: 2px solid #C6879A ;
+        padding: 0;
+        padding: 20px;
+        padding-top: 0px;
+        margin-top: 10px;
+
+    }
+
+    .titleOfAdd{
+        font-size: 13px;
+        font-weight: bolder;
+    }
+
+    .modalinpt{
+        width:80%;
+    }
+
+    .deleteBtn{
+        width:100%;
+    }
+
+    .updateBtn{
+        width: 100%;
+        margin: 0px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width:1024px){
+    .Add-Modal{
+        padding-top: 70px;
+    }
+}
+
+
+@media (max-width:1024px) AND (min-width:490px){
+    .deleteBtn{
+        width:20%;
+    }
+
+    .updateBtn{
+        width: 40%;
+    }
+}
 
 
 

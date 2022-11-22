@@ -29,7 +29,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
     <!-- =======================header======================= -->
     <!-- Fix the navbar -->
     <!-- https://getbootstrap.com/docs/4.0/components/navbar/ -->
-    <div class="d-flex justify-content-between p-3 header navbar sticky-top">
+    <div class="text-center p-3 header sticky-top">
 
         <div class="">
             <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>

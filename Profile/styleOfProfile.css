@@ -49,8 +49,9 @@ body{
     border: 2px solid #C6879A;
     background-color: #C6879A;
     margin-top: 20px;
+
     height: 30px;
-    width: 30%;
+    width: 50%;
 }
 
 .logOutBtn{
@@ -58,16 +59,14 @@ body{
     border: 2px solid #C6879A;
     background-color: #C6879A;
     margin-top: 20px;
+
     height: 30px;
-    width: 10%;
+    width: 50%;
 }
 
 
 
-.imgBTN{
-    margin-top: 20px; 
-    margin-right:175px;
-}
+
 
 
 .pass_show{position: relative} 
@@ -97,28 +96,9 @@ transition: .3s ease all;
 
 .pass_show .ptxt:hover{color: #333333;} 
 
-@media (max-width:2000px){
-    body{
-        background-image: url("../img/bg.png");
-        background-color: #F3ECEC;
-
-    }
-
-    .Add-Modal{
-        background-color:  #D9D9D9;
-        border: 2px solid #C6879A ;
-        padding: 20px;
-  
-    }
-
-    .modalinpt{
-        width:70%;
-    }
-
-    .AddBtn ,.logOutBtn{
-        width:100%;
-    }
-
+.test{
+    margin-top:20px;
+    margin-left:60px;
 }
 
 @media (min-width:450PX) {
@@ -126,11 +106,57 @@ transition: .3s ease all;
         display: flex;
         justify-content: space-between;
     }
-    .hhhh{
+    
+}
+
+@media(max-width:705px){
+    body{
+    background-image: none;
+
+        background-color: #F3ECEC !important;
+    }
+
+    .Add-Modal{
+        background-color: #D9D9D9;
+        padding:20px;
+        border:2px solid #C6879A;
+    }
+
+    .modalinpt{
+        width:70%;
+    }
+
+    .logOutBtn{
+        margin-top: 20px;
+        width: 80%;
+    }
+    .AddBtn{
+        margin-top: 20px;
+
+        width:80%;
+    }
+
+    .Both{
+    }
+
+
+
+
+}
+
+@media (min-width:706px) {
+    .Both{
         display: flex;
         justify-content: center;
     }
-
+    .logOutBtn{
+        margin-top: 20px;
+        width: 10%;
+    }
+    .AddBtn{
+        margin-top: 20px;
+        width:30%;
+    }
 }
 
 

@@ -41,7 +41,7 @@ if (!isset($_SESSION['name'])) {
         </div>
     </div>
     <!-- =====================Add Modal===================== -->
-    <div class="Add-Modal text-center ">
+    <div class="Add-Modal  text-center ">
 
 
         <form action="../Home/sendFromAddToDataB.php" method="post" enctype='multipart/form-data' data-parsley-validate>

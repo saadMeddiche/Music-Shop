@@ -24,7 +24,7 @@ if (!isset($_SESSION['name'])) {
 
 <body>
     <!-- =====================Header===================== -->
-    <div class="d-flex justify-content-between p-3 header">
+    <div class="p-3 header text-center">
 
         <div class="">
             <a href="../Home/Add.php"><button class="rounded ButtonInHome" hidden>Add New Item</button></a>
@@ -52,7 +52,7 @@ if (!isset($_SESSION['name'])) {
     }
     ?>
 
-    <div class="Add-Modal text-center">
+    <div class="Add-Modal text-center ">
 
 
         <b class="titleOfAdd">Update The Musical instrument</b>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['name'])) {
                 <input class="rounded modalinpt" type="number" min="0" oninput="validity.valid||(value='');" name="stockHidden" value="<?php echo $row['stock']; ?>" hidden>
 
             </div>
-            <div>
+            <div class="text-center">
                 <input class="imgBTN" type="file" name="img_img" value="">
             </div>
             <div class="container">

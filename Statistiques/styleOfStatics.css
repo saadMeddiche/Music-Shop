@@ -51,3 +51,11 @@ body{
   padding-top: 2.5%;  
 }
 
+@media (min-width:450PX) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+   
+}

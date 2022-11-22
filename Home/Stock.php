@@ -27,7 +27,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
 <body>
     <!-- =======================header======================= -->
-    <div class="text-center p-3 header">
+    <div class="sticky-top text-center p-3 header ">
 
         <div class="">
             <a href="../Home/Add.php"><button class="rounded ButtonInHome">Add New Item</button></a>
