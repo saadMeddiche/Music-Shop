@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION["name"])){
+header("Location:../Home/Stock.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
     <!-- ===================Login Panel=================== -->
     <div class="text-center login ">
         <?php
-        if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
+        if (isset($_SESSION['message']) ) {
             echo $_SESSION['message'];
         }
 

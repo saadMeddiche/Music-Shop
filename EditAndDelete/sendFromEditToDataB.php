@@ -89,8 +89,8 @@ if (isset($_POST["saveButtonOfModal"])) {
 
 
     $priceOfSells += $price * $sells;
-    echo " 1 $priceOfBought";
-    echo " 2 $boughts";
+    // echo " 1 $priceOfBought";
+    // echo " 2 $boughts";
     $priceOfBoughts += $priceOfBought * $boughts;
     
 
@@ -100,8 +100,10 @@ if (isset($_POST["saveButtonOfModal"])) {
     $stock = $stock + $boughts - $sells;
     $price = $price - ($price * ($discount / 100));
 
+    //The stock can't be negative ,so i replace the negative number with 0
     if ($stock < 0) $stock = 0;
 
+    // update the price and the stock after
     $id = $_POST["idOfCard"];
     $requete = "UPDATE `items` SET `price`='$price',`stock`='$stock' WHERE id='$id'";
     $query = mysqli_query($connection, $requete);

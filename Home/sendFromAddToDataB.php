@@ -7,7 +7,10 @@ if (isset($_POST["AddBtn"])) {
     $nameOfImg = $_FILES['img_img']['name'];
     $tempNameOfImg = $_FILES['img_img']['tmp_name'];
     $folder = "../Upload/";
+    //https://yard.onl/sitelycee/cours/php/Lenvoidefichiers.html
     move_uploaded_file($tempNameOfImg, $folder . $nameOfImg);
+
+    
     
     if (!empty($type) && !empty($price) ) {
         // $requete = "INSERT INTO `items`(`type`, `price`, `img`, `stock`) 

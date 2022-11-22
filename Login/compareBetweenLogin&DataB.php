@@ -1,9 +1,11 @@
 <?php
 include "../connection.php";
+
 //declaration of session
 session_start();
 
 if (isset($_POST['logInBtn'])) {
+    //Put the email in the lower case form before send it
     // https://www.geeksforgeeks.org/php-strtolower-function/#:~:text=The%20strtolower()%20function%20is,in%20the%20string%20remains%20unchanged.
     $email = strtolower($_POST['email']);
     $passw = $_POST['passw'];
@@ -74,7 +76,7 @@ if (isset($_POST['logInBtn'])) {
     } else {
         if (empty($email)) $_SESSION['message'] = "The Blank Of email was empty";
         if (empty($passw)) $_SESSION['message'] = "The Blank Of password was empty";
-        if (empty($email) && empty($email)) $_SESSION['message'] = "The Blank Of email and password are empty";
+        if (empty($email) && empty($pass)) $_SESSION['message'] = "The Blank Of email and password are empty";
         if($data['COUNT(*)'] == 0) $_SESSION['message'] ="This Emai do not exist";
         header("Location:../Login/index.php");
     }

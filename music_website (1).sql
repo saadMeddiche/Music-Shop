@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 17 nov. 2022 à 23:25
+-- Généré le : mar. 22 nov. 2022 à 21:23
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -40,20 +40,17 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `type`, `price`, `img`, `stock`) VALUES
-(7, 'Guitar', 20, 'guitar.jpg', 2),
-(10, 'flueeeeeeeeeeeeeeeeee', 625, 'guitar.jpg', 10);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `login`
---
-
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(17, 'Guitar', 20, 'guitar.jpg', 0),
+(18, 'Drums', 100, 'drums.jpg', 0),
+(19, 'Test', 200, 'sells.jpg', 0),
+(20, 'Deleniti alias ipsa', 428, 'boughts.jpg', 100),
+(21, 'Dolore voluptatem re', 451, 'income.jpg', 0),
+(22, 'Drums', 8787, 'guitar.jpg', 1),
+(23, 'Aspernatur laudantiu', 575, 'guitar.jpg', 0),
+(24, 'Aspernatur laudantiu', 575, 'guitar.jpg', 0),
+(25, 'Aspernatur laudantiu', 575, 'guitar.jpg', 0),
+(26, 'Aspernatur laudantiu', 575, 'guitar.jpg', 0),
+(27, 'Aspernatur laudantiu', 575, 'guitar.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -73,9 +70,31 @@ CREATE TABLE `signin` (
 --
 
 INSERT INTO `signin` (`id`, `name`, `email`, `pass`) VALUES
-(9, 'Saad Meddiche', 'saadmeddiche2004201@gmail.com', 'saadsaad'),
-(10, 'Khalid Meddiche', 'khalidmeddiche2004201@gmail.com', 'khalidkhalid'),
-(11, 'hhh', 'email@email.cm', 'password');
+(15, 'Saad Meddiche', 'saadmeddiche2004201@gmail.com', 'saadsaad'),
+(16, 'Ahmed Abderrafie', 'ahmed@gmail.com', 'SAADSAAD'),
+(17, 'Khalid Meddiche', 'khalidmeddiche@gmail.com', '12345678'),
+(18, 'SAAD MOUMOU', 'saad@gmail.com', '12345678');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `statistique`
+--
+
+CREATE TABLE `statistique` (
+  `sumOfSells` int(11) NOT NULL,
+  `sumOfBoughts` int(11) NOT NULL,
+  `priceOfSells` int(11) NOT NULL,
+  `priceOfBoughts` int(11) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `statistique`
+--
+
+INSERT INTO `statistique` (`sumOfSells`, `sumOfBoughts`, `priceOfSells`, `priceOfBoughts`, `id`) VALUES
+(101, 202, 18787, 101310, 99);
 
 --
 -- Index pour les tables déchargées
@@ -88,15 +107,15 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `signin`
 --
 ALTER TABLE `signin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `statistique`
+--
+ALTER TABLE `statistique`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -107,19 +126,13 @@ ALTER TABLE `signin`
 -- AUTO_INCREMENT pour la table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `signin`
 --
 ALTER TABLE `signin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

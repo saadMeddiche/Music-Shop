@@ -1,15 +1,21 @@
 <?php
 include "../connection.php";
 
+
+
+//If there is no item yet , it will go to Add page
 $requete = "SELECT * FROM `items`";
 $query = mysqli_query($connection, $requete);
 if (mysqli_num_rows($query) == 0) {
     header('location:../Home/Add.php');
 }
 
+//So no one can't access to this page using the url and without login
 session_start();
 if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
+
+// var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">

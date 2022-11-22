@@ -31,6 +31,9 @@ if (isset($_POST['signButton'])) {
             }
         }
     } else {
+        if (empty($email)) $_SESSION['existBefore'] = "The Blank Of email was empty";
+        if (empty($passw)) $_SESSION['existBefore'] = "The Blank Of password was empty";
+        if (empty($email) && empty($pass)) $_SESSION['existBefore'] = "The Blank Of email and password are empty";
         header("Location:../Sign_In/Sign.php");
     }
 }
