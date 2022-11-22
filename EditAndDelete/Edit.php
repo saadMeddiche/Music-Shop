@@ -16,6 +16,7 @@ if (!isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../EditAndDelete/styleOfEdit.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
+    <link rel="icon" type="image/x-icon" href="../img/test.png">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -113,6 +114,7 @@ if (!isset($_SESSION['name'])) {
                                 <!-- always the sells should be equal or low that it stock -->
                                 <input type="number" name="sells" min="0" max="<?php echo $row['stock']; ?>" oninput="validity.valid||(value='');" class="form-control" name="NewPassword" placeholder="Sells">
                             </div>
+                            
                             <label>Boughts</label>
                             <div class="form-group pass_show">
                                 <input type="number" name="boughts" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="Boughts">

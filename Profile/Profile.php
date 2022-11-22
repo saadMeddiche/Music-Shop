@@ -13,10 +13,10 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
     <link rel="stylesheet" href="../Profile/styleOfProfile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
-
+    <link rel="icon" type="image/x-icon" href="../img/test.png">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-    <title>Music | Add</title>
+    <title>Music | Profile</title>
 </head>
 
 <body>

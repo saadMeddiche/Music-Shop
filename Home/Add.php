@@ -16,6 +16,7 @@ if (!isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../Home/styleOfAdd.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
+    <link rel="icon" type="image/x-icon" href="../img/test.png">
     <title>Music | Add</title>
 </head>
 
