@@ -94,7 +94,7 @@ if (!isset($_SESSION["name"])) header("Location:../Login/index.php");
 
                                 <label>Current Password</label>
                                 <div class="form-group pass_show">
-                                    <input id="current" type="text" value="<?php echo $_SESSION["pass"]; ?>" hidden>
+                                    <input id="current" type="text" name="CurrenPassword" value="<?php echo $_SESSION["pass"]; ?>" hidden>
                                     <input type="password" value="" class="form-control" placeholder="Current Password" data-parsley-equalto="#current" data-parsley-equalto-message="Incorrect password" required>
                                 </div>
                                 <label>New Password</label>

@@ -27,9 +27,9 @@ if (!isset($_SESSION['name'])) {
     <!-- =====================Header===================== -->
     <div class="p-3 header text-center">
 
-        <div class="">
+        <!-- <div class="">
             <a href="../Home/Add.php"><button class="rounded ButtonInHome" hidden>Add New Item</button></a>
-        </div>
+        </div> -->
 
         <div>
             <a href="../Home/Stock.php"><button class="ButtonInHome">Stock</button></a>
@@ -85,8 +85,7 @@ if (!isset($_SESSION['name'])) {
                 <button class="rounded updateBtn" type="submit" name="updateBtn"><b>Update</b> </button>
                 <button class="rounded deleteBtn" type="submit" name="deleteBtn"><b>Delete</b> </button>
             </div>
-
-
+        <?php  if(isset($_SESSION["boughtsAndItsprice"])) echo $_SESSION["boughtsAndItsprice"]; unset($_SESSION["boughtsAndItsprice"]); ?>
 
     </div>
     <!-- The Modal of the new sells and boughts -->

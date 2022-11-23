@@ -1,9 +1,17 @@
 <?php
 session_start();
 include "../connection.php";
-$pass = $_POST["NewPassword"];
-$email= $_SESSION["email"];
-$requete="UPDATE `signin` SET `pass`='$pass' WHERE email='$email'";
-$query = mysqli_query($connection, $requete);
+$newpass = $_POST["NewPassword"];
+$currentpass = $_POST["CurrenPassword"];
 
-header("Location:../Profile/Profile.php");
+if ($newpass == $currentpass) {
+    // echo "test";
+    header("Location:../Profile/Profile.php");
+} else {
+    $email = $_SESSION["email"];
+    $requete = "UPDATE `signin` SET `pass`='$newpass' WHERE email='$email'";
+    $query = mysqli_query($connection, $requete);
+    header("Location:../Profile/Profile.php");
+}
+
+

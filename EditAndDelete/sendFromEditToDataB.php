@@ -12,7 +12,7 @@ if (isset($_POST["updateBtn"])) {
 
     $id = $_POST["idOfCard"];
 
-    if (!empty($type) && !empty($price) ) {
+    if (!empty($type) && !empty($price) && $price >= 0) {
         if ($nameOfImg === "") {
             $requete = "UPDATE `items` SET `type`='$type',`price`='$price',`stock`='$stock' WHERE id='$id'";
         } else {
@@ -28,7 +28,10 @@ if (isset($_POST["updateBtn"])) {
             echo 'The data has not been sended';
         }
     } else {
-        echo "The inputs are empty";
+        if (empty($type) && empty($price)) echo "The type and price inputs are both empty";
+        if (!empty($type)) echo "The Type input is Empty";
+        if (!empty($price)) echo "The Price input is Empty";
+        if ($price < 0) echo "The Price Can't Be Negative";
     }
 }
 
@@ -85,14 +88,18 @@ if (isset($_POST["saveButtonOfModal"])) {
 
     if ($discount == null) $discount = 0;
 
-    if($priceOfBought == null) $priceOfBought = 0;
+    if ($priceOfBought == null) $priceOfBought = 0;
 
+    if ($boughts != 0 && $priceOfBought == 0 || $boughts == 0 && $priceOfBought !=0) {
+        $_SESSION["boughtsAndItsprice"] = "The boughts input and price of boughts inpute Should Be Both filled";
+        header("Location:../EditAndDelete/Edit.php");
+    }
 
     $priceOfSells += $price * $sells;
     // echo " 1 $priceOfBought";
     // echo " 2 $boughts";
     $priceOfBoughts += $priceOfBought * $boughts;
-    
+
 
     $sumOfSells += $sells;
     $sumOfBoughts += $boughts;

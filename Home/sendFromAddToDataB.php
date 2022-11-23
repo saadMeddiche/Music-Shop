@@ -10,9 +10,9 @@ if (isset($_POST["AddBtn"])) {
     //https://yard.onl/sitelycee/cours/php/Lenvoidefichiers.html
     move_uploaded_file($tempNameOfImg, $folder . $nameOfImg);
 
-    
-    
-    if (!empty($type) && !empty($price) ) {
+
+
+    if (!empty($type) && !empty($price) && $price >= 0) {
         // $requete = "INSERT INTO `items`(`type`, `price`, `img`, `stock`) 
         // VALUES ('$type','$price','$nameOfImg','$stock')";
         $requete = "INSERT INTO `items`(`type`, `price`, `img`) 
@@ -21,12 +21,15 @@ if (isset($_POST["AddBtn"])) {
         $query = mysqli_query($connection, $requete);
 
         if (isset($query)) {
-            
+
             header("location:../Home/Stock.php");
         } else {
             echo 'The data has not been sended';
         }
     } else {
-        echo "The inputs are empty";
+        if (empty($type) && empty($price)) echo "The type and price inputs are both empty";
+        if (!empty($type)) echo "The Type input is Empty";
+        if (!empty($price)) echo "The Price input is Empty";
+        if ($price < 0) echo "The Price Can't Be Negative";
     }
 }
