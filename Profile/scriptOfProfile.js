@@ -12,4 +12,5 @@ $(this).parent().find(".form-control").attr('type', function(index, attr){
     
     return attr == 'password' ? 'text' : 'password'; }); 
     
-});  
+});
+
